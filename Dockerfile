@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
 # Build ARGoS from source
 RUN git clone https://github.com/ilpincy/argos3.git && \
     cd argos3 && \
+    git checkout 92164b84 && \
     mkdir build_simulator && cd build_simulator && \
     cmake -DCMAKE_BUILD_TYPE=Release ../src && \
     make -j$(nproc)
